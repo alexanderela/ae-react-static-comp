@@ -1,5 +1,6 @@
 import React from 'react';
 import Story from './Story';
+import Author from './Author';
 import './Stories.css';
 
 const Stories = (props) => {
@@ -12,10 +13,13 @@ const Stories = (props) => {
       <div className='stories-grid'>
         {
           props.stories.map( (story, index) => {
-            console.log(story);
+            console.log(index);
+
             // INSTEAD OF returning the div below, return a Story component
             // Be sure to pass down the correct props!
-            return (<div>{story.title}</div>)
+            return (
+              <Story story={index = story} />
+            )
           })
         }
       </div>
